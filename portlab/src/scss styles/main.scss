@@ -1,0 +1,12 @@
+@import 'normalize';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+@import 'settings/fonts';
+@import 'settings/colors';
+
+body {
+  font-family: $font-base;
+  background-color: $background-color;
+  color: $text-color;
+}
+
