@@ -1,0 +1,99 @@
+.container {
+  width: 100%;
+}
+.container header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.container .section1, .container .section2 {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.container .section1 .logo {
+  display: flex;
+  align-items: center;
+}
+.container .section1 .logo .logoImage {
+  height: 40px;
+  margin-right: 10px;
+}
+.container .section1 .logo .logoText {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+.container .section1 .login button, .container .section1 .register button {
+  padding: 8px 16px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.container .section1 .login button:hover, .container .section1 .register button:hover {
+  background-color: #0056b3;
+}
+.container .section2 .nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .section2 .nav.open {
+  display: block;
+}
+.container .section2 .nav .navList {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.container .section2 .nav .navList .navItem {
+  margin: 0 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.container .section2 .nav .navList .navItem:hover {
+  color: #007bff;
+}
+.container .section2 .hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .container .section1 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .container .section1 .login button, .container .section1 .register button {
+    width: 100%;
+    margin: 5px 0;
+  }
+  .container .section2 .nav {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .container .section2 .hamburger {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=Home.css.map */
