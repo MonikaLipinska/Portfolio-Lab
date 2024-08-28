@@ -11,12 +11,7 @@ function App() {
       <Routes>
           <Route path="/" element={<Home/>}>/>
           </Route>
-          <Route>
 
-          </Route>
-          <Route>
-
-          </Route>
       </Routes>
     </Router>
   )
