@@ -1,12 +1,32 @@
-import styles from "./Home.scss";
+import React from "react";
+import { NavLink } from 'react-router-dom';
+import styles from "../styles/Home.module.scss";
+import obrazek1 from "../photos/doggraf.jpeg";
 
 
-const Home = () = {
+
+
+const Home = () => {
+
+
+    const handleMouseEnter = () => {
+        console.log("Mouse entered");
+
+    };
+
+
+    const handleMouseLeave = () => {
+        console.log("Mouse left");
+
+    };
+
+
+
 
     return (
 
         <div className={styles.container}>
-            <header>
+            <header className={styles.header}>
                 <section className={styles.section1}>
                 <div className={styles.logo}>
                     <img src={obrazek1} alt="Logo" className={styles.logoImage}/>
@@ -20,7 +40,7 @@ const Home = () = {
                 </div>
                 </section>
                 <section className={styles.section2}>
-                    <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`}>
+                    <nav> {/* <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`}> */}
                     <ul className={styles.navList}>
                         <li><NavLink to="/" className={styles.navItem}>Home</NavLink></li>
                         <li><NavLink to="/about" className={styles.navItem}>O nas</NavLink></li>

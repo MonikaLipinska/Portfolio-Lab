@@ -1,11 +1,31 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+
+}
+
+
 .container {
-  width: 100%;
-  header {
+  width: 100vw;
+  height: auto;
+  padding: 0px;
+margin: 0 auto;
+
+  box-sizing: border-box;
+
+  .header {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height:200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative;
   }
 
   .section1, .section2 {
@@ -15,6 +35,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    box-sizing: border-box;
   }
 
   .section1 {
@@ -91,36 +112,14 @@
   }
 
   @media (max-width: 768px) {
-    .section1 {
+    .header {
+      height: auto;
+      padding: 10px;
+    }
+
+    .section1, .section2 {
       flex-direction: column;
       align-items: flex-start;
-
-      .login, .register {
-        button {
-          width: 100%;
-          margin: 5px 0;
-        }
-      }
     }
-
-    .section2 {
-      .nav {
-        display: none;
-        flex-direction: column;
-        background-color: #fff;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      .hamburger {
-        display: block;
-      }
-    }
-  }
-}
-
-
+  }}
 
