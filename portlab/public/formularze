@@ -1,0 +1,79 @@
+import './App.css'
+import { useState } from 'react';
+
+function ComponentA({ setDataFromComponent }) {
+
+  const [inputVal, setInputVal] = useState('');
+
+  const handleButton = () => {
+    setDataFromComponent((prev) => [...prev, inputVal]);
+  }
+
+  return (
+    <>
+    <input value={inputVal} onChange={(e) => setInputVal(e.target.value)} />
+    <button onClick={handleButton}>Save</button>
+    <h1>Component A</h1>
+    </>
+  );
+}
+
+function ComponentB({ setDataFromComponent }) {
+
+  const [inputVal, setInputVal] = useState('');
+
+  const handleButton = () => {
+    setDataFromComponent((prev) => [...prev, inputVal]);
+  }
+
+  return (
+    <>
+    <input value={inputVal} onChange={(e) => setInputVal(e.target.value)} />
+    <button onClick={handleButton}>Save</button>
+    <h1>Component B</h1>
+    </>
+  );
+}
+function ComponentC({ setDataFromComponent }) {
+
+  const [inputVal, setInputVal] = useState('');
+
+  const handleButton = () => {
+    setDataFromComponent((prev) => [...prev, inputVal]);
+  }
+
+  return (
+    <>
+    <input value={inputVal} onChange={(e) => setInputVal(e.target.value)} />
+    <button onClick={handleButton}>Save</button>
+    <h1>Component C</h1>
+    </>
+  );
+}
+
+function App() {
+
+  const [currentComponent, setCurrentComponent] = useState('a');
+
+  const [dataFromComponent, setDataFromComponent] = useState([]);
+
+  return (
+   <>
+
+    { dataFromComponent }
+    <hr />
+
+    <button onClick={() => setCurrentComponent('a')}>Component A</button>
+    <button onClick={() => setCurrentComponent('b')}>Component B</button>
+    <button onClick={() => setCurrentComponent('c')}>Component C</button>
+
+    { currentComponent === 'a' && <ComponentA setDataFromComponent={setDataFromComponent} />}
+    { currentComponent === 'b' && <ComponentB setDataFromComponent={setDataFromComponent} />}
+    { currentComponent === 'c' && <ComponentC setDataFromComponent={
+      setDataFromComponent
+    } />}
+   </>
+  )
+}
+
+export default App

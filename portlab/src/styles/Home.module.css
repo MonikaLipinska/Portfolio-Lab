@@ -6,25 +6,44 @@
 }
 
 .container {
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
   height: auto;
-  padding: 0px;
-  margin: 0 auto;
+  padding: 10px;
+  margin: 0;
   box-sizing: border-box;
-}
-.container .header {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  height: auto;
+  padding: 30px;
   box-sizing: border-box;
   position: relative;
+  width: 100vw;
 }
-.container .section1, .container .section2 {
+
+.rightContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  align-items: center;
+}
+
+.leftContainer {
+  display: flex;
+  align-items: center;
+}
+
+/*.section1, .section2 {
   width: 100%;
   max-width: 1200px;
   display: flex;
@@ -33,47 +52,92 @@
   padding: 10px 20px;
   box-sizing: border-box;
 }
-.container .section1 .logo {
+*/
+.section1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  padding-bottom: 30px;
+  box-sizing: border-box;
+  flex-direction: row;
+}
+
+.logo {
   display: flex;
   align-items: center;
+  flex-direction: row;
 }
-.container .section1 .logo .logoImage {
-  height: 40px;
-  margin-right: 10px;
+
+.logoImage {
+  height: 280px;
+  width: 200px;
+  border: 1px solid black;
 }
-.container .section1 .logo .logoText {
+
+.logoText {
   font-size: 24px;
   font-weight: bold;
   color: #333;
+  padding: 15px;
 }
-.container .section1 .login button, .container .section1 .register button {
+
+.login, .register {
+  margin-left: 20px;
+  margin-top: 10px;
+  display: flex;
+}
+
+.buttonLogin, .buttonRegister {
   padding: 8px 16px;
   font-size: 16px;
   color: #fff;
-  background-color: #007bff;
+  background-color: coral;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.container .section1 .login button:hover, .container .section1 .register button:hover {
-  background-color: #0056b3;
+
+.buttonLogin:hover, .buttonRegister:hover {
+  background-color: cornflowerblue;
 }
-.container .section2 .nav {
+
+.section2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container ul.navList {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  row-gap: 20px;
+}
+
+.nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  list-style-type: none;
 }
-.container .section2 .nav.open {
+
+.nav.open {
   display: block;
 }
-.container .section2 .nav .navList {
+
+.navList {
   display: flex;
-  list-style: none;
+  list-style-type: none;
   padding: 0;
   margin: 0;
+  flex-direction: row;
+  align-items: center;
 }
-.container .section2 .nav .navList .navItem {
+
+.navItem {
   margin: 0 15px;
   font-size: 16px;
   font-weight: 500;
@@ -81,22 +145,77 @@
   text-decoration: none;
   transition: color 0.3s;
 }
-.container .section2 .nav .navList .navItem:hover {
+
+.navItem:hover {
   color: #007bff;
 }
-.container .section2 .hamburger {
+
+.hamburger {
   display: none;
   font-size: 30px;
   cursor: pointer;
 }
+
+.section3 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px 0;
+  background-color: #f9f9f9;
+  width: 100vw;
+}
+.section3 .img {
+  align-items: center;
+  justify-content: center;
+  height: 5px;
+}
+.section3 .section3Text {
+  max-width: 80%;
+  text-align: center;
+}
+.section3 .section3Text h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.section3 .section3Text .section3Buttons {
+  display: flex;
+  justify-content: center;
+}
+.section3 .section3Text .section3Buttons .button1, .section3 .section3Text .section3Buttons .button2 {
+  padding: 15px 30px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+.section3 .section3Text .section3Buttons .button1:hover, .section3 .section3Text .section3Buttons .button2:hover {
+  opacity: 0.9;
+}
+.section3 .section3Text .section3Buttons .button1 {
+  background-color: black;
+  color: white;
+}
+.section3 .section3Text .section3Buttons .button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
 @media (max-width: 768px) {
-  .container .header {
+  .header {
     height: auto;
     padding: 10px;
   }
-  .container .section1, .container .section2 {
+  .navList {
+    display: none;
+  }
+  .section1, .section2 {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .hamburger {
+    display: block;
   }
 }
 

@@ -1,0 +1,55 @@
+.stepsMain {
+  text-align: center;
+  padding: 20px;
+}
+.stepsMain h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: relative;
+}
+.stepsMain h2:after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: #000;
+  margin: 10px auto 0;
+}
+.stepsMain .stepsContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.stepsMain .stepsContainer .step {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+}
+.stepsMain .stepsContainer .step img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+.stepsMain .stepsContainer .step h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.stepsMain .stepsContainer .step p {
+  font-size: 14px;
+  color: #666;
+}
+.stepsMain .donateButton {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.stepsMain .donateButton:hover {
+  background-color: #e0e0e0;
+}
+
+/*# sourceMappingURL=Steps.module.css.map */
