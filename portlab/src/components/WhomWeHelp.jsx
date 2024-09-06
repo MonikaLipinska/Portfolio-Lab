@@ -98,8 +98,7 @@ const WhomWeHelp = () => {
                 </button>
                 <button
                     className={`${helpStyles.tab} ${activeTab === 'local' ? helpStyles.active : ''}`}
-                    onClick={() => setActiveTab('local')}
-                >
+                    onClick={() => setActiveTab('local')}>
                     Lokalnym zbiórkom
                 </button>
             </div>

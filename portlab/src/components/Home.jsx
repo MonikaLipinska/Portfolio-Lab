@@ -1,11 +1,12 @@
 import React, {useRef} from "react";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import styles from "../styles/Home.module.scss";
 import statsStyles from "../styles/Stats.module.scss";
 import stepsStyles from "../styles/Steps.module.scss";
 import aboutStyles from "../styles/About.module.scss";
+import helpStyles from "../styles/Help.module.scss";
 import WhomWeHelp from "../components/WhomWeHelp.jsx";
-//import helpStyles from "../styles/Help.module.scss";
+
 import obrazek1 from "../photos/doggraf.jpeg";
 import obrazek2 from "../photos/shirt.svg";
 import obrazek3 from "../photos/torba.svg";
@@ -18,9 +19,11 @@ import obrazek8 from "../photos/People.jpg";
 
 
 const Home = () => {
+
+    const navigate = useNavigate();
     const organizationSectionRef = useRef(null);
 
-    const scrollToSection = () => {
+    const scrollToWhomWeHelp = () => {
         if (organizationSectionRef.current) {
             organizationSectionRef.current.scrollIntoView({ behavior: 'smooth' });
         }
@@ -55,10 +58,10 @@ const Home = () => {
                         <section className={styles.section1}>
 
                             <div className={styles.login}>
-                                <button className={styles.buttonLogin} type="submit">Zaloguj</button>
+                                <button className={styles.buttonLogin} onClick={() => navigate('/logowanie')}>Zaloguj</button>
                             </div>
                             <div className={styles.register}>
-                                <button className={styles.buttonRegister} type="submit">Zarejestruj</button>
+                                <button className={styles.buttonRegister} onClick={() => navigate('/rejestracja')}>Zarejestruj</button>
                             </div>
 
                         </section>
@@ -69,8 +72,10 @@ const Home = () => {
                                     <li><NavLink to="/about" className={styles.navItem}>O nas</NavLink></li>
                                     <li><NavLink to="/how-it-works" className={styles.navItem}>Jak to działa?</NavLink>
                                     </li>
-                                    <li><NavLink to="/organizations" className={styles.navItem}
-                                                 onClick={scrollToSection}>Organizacje i fundacje</NavLink></li>
+                                    <li><button onClick={scrollToWhomWeHelp} className={styles.navItem}>
+                                        Organizacje i fundacje
+                                    </button>
+                                    </li>
                                     <li><NavLink to="/contact" className={styles.navItem}>Kontakt</NavLink></li>
                                 </ul>
                             </nav>
@@ -159,7 +164,9 @@ const Home = () => {
                     </div>
                 </section>
 
-                <WhomWeHelp />
+                <section ref={organizationSectionRef} className={helpStyles.helpSection}>
+                    <WhomWeHelp />
+                </section>
                 {/*<section className={supportStyles.SupportContainer}>
     <h2>Komu pomagamy</h2>
     <div className={supportStyles.SupportOrgs}>
